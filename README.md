@@ -1,6 +1,12 @@
 # Github Actions Runner
 
-Self contained dockerized Github Action runner based from https://testdriven.io/blog/github-actions-docker/
+This project handles dockerizing the Github Action Runner with registration and cleanup logic.
+
+Adding the ability for simple manual and autoscaling via Docker / Docker Swarm
+
+A sibling project with the same approach for Bitbucket Pipeline Runners can be found at https://github.com/SamJUK/bitbucket-pipeline-runner
+
+Based from https://testdriven.io/blog/github-actions-docker/
 
 ## Usage
 
