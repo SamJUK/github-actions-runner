@@ -5,10 +5,15 @@ updates:
     schedule:
       interval: "weekly"
       time: '06:00'
-      day: "monday"
+      day: 'monday'
     cooldown:
       default-days: 7
+    groups:
+      all-actions:
+        patterns:
+          - "*"
     reviewers:
       - "SamJUK"
     assignees:
       - "SamJUK"
+
