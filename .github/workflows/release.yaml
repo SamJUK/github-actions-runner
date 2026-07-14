@@ -36,7 +36,21 @@ on:
         default: '22.04'
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+
+      - name: Install bats
+        run: sudo apt-get update && sudo apt-get install -y bats
+
+      - run: make test
+        env:
+          RUNNER_VERSION: ${{ inputs.version }}
+          UBUNTU_VERSION: ${{ inputs.ubuntu_version }}
+
   build-docker-image:
+    needs: test
     runs-on: ubuntu-latest
     permissions: write-all
     env:
