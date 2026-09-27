@@ -38,6 +38,7 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v6
 
@@ -52,6 +53,7 @@ jobs:
   build-docker-image:
     needs: test
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     permissions: write-all
     env:
       IMAGE_NAME: samjuk/github-actions-runner
@@ -99,6 +101,7 @@ jobs:
   create-release:
     needs: build-docker-image
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     permissions: write-all
     env:
       IMAGE_NAME: samjuk/github-actions-runner
